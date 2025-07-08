@@ -5,6 +5,8 @@
 ![Coverage](https://img.shields.io/badge/coverage-100%25-brightgreen.svg)
 ![Lint](https://img.shields.io/badge/lint-passing-brightgreen.svg)
 ![Last Commit](https://img.shields.io/github/last-commit/ThisIsMikeyS/cicd-demo-app)
+[![codecov](https://codecov.io/gh/ThisIsMikeyS/cicd-demo-app/branch/main/graph/badge.svg)](https://codecov.io/gh/ThisIsMikeyS/cicd-demo-app)
+
 
 A minimal Python project to demonstrate continuous integration (CI) and code quality enforcement using GitHub Actions, `unittest`, `coverage.py`, and `flake8`.
 

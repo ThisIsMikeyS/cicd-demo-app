@@ -25,12 +25,16 @@ jobs:
 
     - name: Run Lint Check (flake8)
       run: |
-        echo "Running flake8 lint check..."
         flake8 src tests
 
     - name: Run Unit Tests with Coverage
       run: |
-        echo "Running tests with coverage..."
         coverage run -m unittest discover -s tests
         coverage report
         coverage xml
+
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v3
+      with:
+        files: coverage.xml
+        fail_ci_if_error: true
