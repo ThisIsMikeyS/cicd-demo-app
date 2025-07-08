@@ -33,6 +33,11 @@ jobs:
         coverage report
         coverage xml
 
+    - name: Confirm coverage.xml exists
+      run: |
+        ls -l coverage.xml
+
+
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v3
       with:
