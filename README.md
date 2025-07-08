@@ -2,19 +2,22 @@
 # 🚀 CI/CD Demo App (Python)
 
 ![CI](https://github.com/ThisIsMikeyS/cicd-demo-app/actions/workflows/python-app.yml/badge.svg)
+![Coverage](https://img.shields.io/badge/coverage-100%25-brightgreen.svg)
+![Lint](https://img.shields.io/badge/lint-passing-brightgreen.svg)
 ![Last Commit](https://img.shields.io/github/last-commit/ThisIsMikeyS/cicd-demo-app)
 
-A minimal Python project to demonstrate continuous integration with GitHub Actions using `unittest`. Built for simplicity and clarity, this is ideal for learning and portfolio use.
+A minimal Python project to demonstrate continuous integration (CI) and code quality enforcement using GitHub Actions, `unittest`, `coverage.py`, and `flake8`.
 
 ---
 
 ## ✨ Features
 
-- ✅ Simple Python calculator module (`add`, `subtract`, `multiply`, `divide`)
-- 🧪 Unit-tested using built-in `unittest` framework
-- 🔁 GitHub Actions workflow for CI on push and pull requests
+- ✅ Basic Python calculator module (`add`, `subtract`, `multiply`, `divide`)
+- 🧪 Unit-tested with `unittest`
+- 📊 Coverage reporting via `coverage.py`
+- 🧼 Linting enforced using `flake8` for code quality
+- 🔁 CI pipeline with GitHub Actions
 - 🛠 Compatible with Visual Studio 2022 on Windows 11
-- 📁 Clean folder structure for code and tests
 
 ---
 
@@ -28,8 +31,10 @@ CICDDemoApp/
 │   └── test_calculator.py       # Unit tests
 ├── .github/
 │   └── workflows/
-│       └── python-app.yml       # GitHub Actions CI workflow
-├── requirements.txt             # (Optional) Dependencies
+│       └── python-app.yml       # CI/CD pipeline config
+├── .coveragerc                  # Coverage config
+├── .flake8                      # Flake8 linting config
+├── requirements.txt             # Project dependencies
 ├── README.md                    # Project documentation
 ├── LICENSE                      # MIT License
 ```
@@ -38,25 +43,37 @@ CICDDemoApp/
 
 ## 🧪 Running the Tests Locally
 
-From your project root, run:
-
 ```bash
+# Run unit tests
 python -m unittest discover -s tests
+
+# Run tests with coverage
+coverage run -m unittest discover -s tests
+coverage report
 ```
 
-All tests should pass.
+---
+
+## 🧼 Lint Check (flake8)
+
+```bash
+flake8 src tests
+```
 
 ---
 
 ## ⚙️ CI/CD Pipeline (GitHub Actions)
 
 This repo includes a GitHub Actions workflow that:
-- Runs on `push` and `pull_request` to the `main` branch
-- Sets up Python 3.10
-- Installs dependencies (if any)
-- Runs unit tests
 
-You can find the workflow in:
+- Runs on `push` and `pull_request` to `main`
+- Installs Python 3.10
+- Installs dependencies from `requirements.txt`
+- Runs `flake8` for code linting
+- Runs `unittest` with coverage tracking
+- Fails the build if linting or tests fail
+
+Workflow location:
 
 ```
 .github/workflows/python-app.yml
@@ -67,11 +84,12 @@ You can find the workflow in:
 ## 🚀 Getting Started (Development)
 
 ### Prerequisites
-- Python 3.10+
-- Git & GitHub account
-- (Optional) Visual Studio 2022 with Python tools
 
-### Run Locally
+- Python 3.10+
+- GitHub account
+- (Optional) Visual Studio 2022 with Python development tools
+
+### Clone and Run
 
 ```bash
 git clone https://github.com/ThisIsMikeyS/cicd-demo-app.git

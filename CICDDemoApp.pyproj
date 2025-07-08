@@ -35,6 +35,8 @@
     <Folder Include="src\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include=".coveragerc" />
+    <Content Include=".flake8" />
     <Content Include=".github\workflows\python-app.yml" />
     <Content Include="LICENSE" />
     <Content Include="README.md" />
