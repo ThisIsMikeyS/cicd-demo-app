@@ -14,6 +14,7 @@ An exception test is included for division by zero.
 import unittest
 from src.calculator import add, subtract, multiply, divide
 
+
 class TestCalculator(unittest.TestCase):
     """Unit tests for calculator functions."""
 
@@ -37,6 +38,7 @@ class TestCalculator(unittest.TestCase):
         """Test that dividing by zero raises ZeroDivisionError."""
         with self.assertRaises(ZeroDivisionError):
             divide(10, 0)
+
 
 # This condition allows the test to be run directly from the command line
 if __name__ == '__main__':
